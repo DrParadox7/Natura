@@ -1,0 +1,26 @@
+// Add your dependencies here
+
+dependencies {
+
+    compile("com.github.GTNewHorizons:Mantle:master-SNAPSHOT:dev")
+
+    compileOnly("com.github.GTNewHorizons:waila:master-SNAPSHOT:dev") {
+        transitive = false
+    }
+    compileOnly("com.github.GTNewHorizons:ForgeMultipart:master-SNAPSHOT:dev") {
+        transitive = false
+    }
+    compileOnly("com.github.GTNewHorizons:NotEnoughItems:master-SNAPSHOT:dev") {
+        transitive = false
+    }
+    compileOnly("com.github.GTNewHorizons:TinkersConstruct:master-SNAPSHOT:dev") {
+        transitive = false
+    }
+
+    compileOnly("curse.maven:minefactory-reloaded-66672:2366150") {
+        transitive = false
+    }
+    compileOnly("thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev") {
+        transitive = false
+    }
+}

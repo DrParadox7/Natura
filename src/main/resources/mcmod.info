@@ -1,0 +1,21 @@
+[
+  {
+    "modid": "${modId}",
+    "name": "${modName}",
+    "description": "Heyo, Redwood trees! Chop them all day long!",
+    "version": "${modVersion}",
+    "mcversion": "${minecraftVersion}",
+    "url": "www.minecraftforum.net/topic/1753754-natura/",
+    "updateUrl": "",
+    "authors": [
+      "mDiyo", "Slime Knights"
+    ],
+    "credits": "Samtrion, tterrag",
+    "logoFile": "",
+    "screenshots": [
+    ],
+    "parent":"",
+    "dependencies": [
+    ]
+  }
+]

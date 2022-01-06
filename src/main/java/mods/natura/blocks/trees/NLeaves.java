@@ -82,23 +82,28 @@ public class NLeaves extends BlockLeaves
 
             if ((meta & 4) == 0)
             {
-                boolean nearbyTree = false;
-                byte range = 4;
-                for (int posX = x - range; posX <= x + range; posX++)
-                {
-                    for (int posY = y - range; posY <= y + range; posY++)
+                int range = 4;
+                if (world.checkChunksExist(x - range, y - range, z - range, x + range, y + range, z + range)) {
+                    // Do not decay leaves if can't check every possible support
+                    boolean nearbyTree = false;
+
+                    for (int posX = x - range; posX <= x + range; posX++)
                     {
-                        for (int posZ = z - range; posZ <= z + range; posZ++)
+                        for (int posY = y - range; posY <= y + range; posY++)
                         {
-                            Block block = world.getBlock(posX, posY, posZ);
-                            if (block != null && block.canSustainLeaves(world, posX, posY, posZ))
-                                nearbyTree = true;
+                            for (int posZ = z - range; posZ <= z + range; posZ++)
+                            {
+                                Block block = world.getBlock(posX, posY, posZ);
+                                if (block != null && block.canSustainLeaves(world, posX, posY, posZ))
+                                    nearbyTree = true;
+                            }
                         }
                     }
-                }
 
-                if (!nearbyTree)
-                    this.removeLeaves(world, x, y, z);
+                    if (!nearbyTree) {
+                        this.removeLeaves(world, x, y, z);
+                    }
+                }
             }
         }
     }
